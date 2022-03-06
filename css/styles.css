@@ -29,6 +29,7 @@ h2,
 h3 {
   font-weight: 900;
   margin: 1rem 0 4rem 0;
+  line-height: 1.2;
 }
 h1 {
   font-size: 4.8rem;
@@ -52,13 +53,13 @@ img {
   width: 90%;
 }
 .btn {
-  color: var(--white);
+  color: var(--black);
   background-color: var(--white);
   border: 1px solid var(--grey);
   padding: 0.5rem 2rem;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 }
-btn:hover {
+.btn:hover {
   background-color: var(--grey);
   color: var(--white);
 }
@@ -99,7 +100,7 @@ btn:hover {
   text-align: center;
   font-size: 3.5rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .site-name {
     font-size: 4.8rem;
   }
@@ -107,7 +108,7 @@ btn:hover {
 .site-name span {
   font-weight: 900;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .bar {
     display: flex;
     justify-content: space-between;
@@ -119,8 +120,9 @@ btn:hover {
   flex-direction: column;
   align-items: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .contact {
+    min-width: 575px;
     align-items: flex-end;
   }
 }
@@ -144,19 +146,19 @@ btn:hover {
   width: 100%;
   margin-top: 1.5rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .navigation {
     flex-direction: row;
   }
 }
 .navigation a {
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 1rem 2rem;
   transition: all 0.3s ease-out;
   width: 100%;
   text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .navigation a {
     padding: 1rem 2rem;
   }
@@ -168,7 +170,7 @@ btn:hover {
 .slogan {
   text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .slogan {
     text-align: right;
   }
@@ -177,7 +179,7 @@ btn:hover {
   font-size: 3rem;
   margin: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .slogan h1 {
     font-size: 4.8rem;
   }
@@ -185,4 +187,86 @@ btn:hover {
 .slogan p {
   margin: 0;
   line-height: 1;
+}
+
+.about-us {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  background-image: url(../img/nosotros.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+@media (min-width: 992px) {
+  .about-us {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.about-us-container {
+  background-color: var(--white);
+  padding: 0 5rem;
+}
+@media (min-width: 992px) {
+  .about-us-container {
+    grid-column: 2 / 4;
+  }
+}
+.about-us-container p {
+  margin-bottom: 1rem;
+}
+
+/* Models */
+.model {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  margin-bottom: 5rem;
+}
+.model:last-of-type {
+  margin-bottom: 0;
+}
+@media (min-width: 992px) {
+  .model {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.model-container {
+  padding: 5rem;
+  background-color: var(--white);
+}
+
+.basic {
+  background-image: url(../img/modelo_basico.jpg);
+}
+@media (min-width: 992px) {
+  .basic {
+    background-position: top right;
+  }
+  .basic .model-container {
+    grid-row: 2 / 3;
+    padding: 2rem 2rem 2rem 0;
+  }
+}
+.premier {
+  background-image: url(../img/modelo_premier.jpg);
+}
+@media (min-width: 992px) {
+  .premier {
+    background-position: top left;
+  }
+  .premier .model-container {
+    grid-column: 2 / 3;
+    padding: 2rem;
+  }
+}
+.elite {
+  background-image: url(../img/modelo_elite.jpg);
+}
+@media (min-width: 992px) {
+  .elite {
+    background-position: bottom right;
+  }
+  .elite .model-container {
+    padding: 2rem 2rem 2rem 0;
+  }
 }
